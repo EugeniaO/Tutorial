@@ -1,0 +1,111 @@
+/* Специфічність - 0 0 0 1 */
+a {
+  color: green;
+}
+
+/* Специфічність - 0 0 1 0 */
+.post-link {
+  color: orange;
+  text-decoration: none;
+}
+
+/* Специфічність - 0 0 1 1 */
+a.post-link {
+  color: blue;
+  text-transform: unset;
+}
+
+/* Специфічність - 0 0 2 0 */
+.post > .post-link {
+  color: red;
+}
+
+/* ✅ Специфічність - 0 0 2 1 */
+.post > a.post-link {
+  color: brown;
+}
+
+.example::selection {
+  background-color: blueviolet;
+}
+
+.test-item:nth-last-child(n + 2) {
+  background-color: tomato;
+  color: green;
+}
+
+.test-class::before {
+  content: "Це текст в ::before";
+  font-size: 40px;
+  color: orange;
+}
+
+.test-class:hover::before {
+  color: green;
+}
+
+.test-class::before,
+.test-class::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+}
+
+.test-class::after {
+  content: "Це текст в ::after";
+  font-size: 30px;
+  color: teal;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/599/599516.png");
+}
+
+.test-class:hover::after {
+  display: block;
+}
+
+.test-item::after {
+  display: inline-block;
+
+  margin-left: 16px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/599/599516.png");
+}
+
+.test-item:hover::after {
+  display: block;
+}
+
+/* .test-item::before,
+.test-item::after {
+  content: '';
+  display: inline-block
+  width: 24px;
+  height: 24px;
+} */
+
+.gradient {
+  background-image: linear-gradient(
+    to right,
+    #f44336 15%,
+    #09792b 40%,
+    #00b9ff 65%,
+    #ffb800
+  );
+}
+
+.icon {
+  display: inline-flex;
+  width: 120px;
+  height: 120px;
+  border: 2px dashed #2a2a2a;
+  border-radius: 8px;
+  fill: #2a2a2a;
+  fill-opacity: 0.7;
+
+  stroke: yellow;
+  stroke-width: 0.5px;
+  stroke-opacity: 0.7;
+}
+
+.icon:hover {
+  fill: red;
+}
